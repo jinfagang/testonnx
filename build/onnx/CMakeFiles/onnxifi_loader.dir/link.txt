@@ -1,0 +1,2 @@
+/home/jintian/anaconda3/bin/x86_64-conda-linux-gnu-ar qc libonnxifi_loader.a CMakeFiles/onnxifi_loader.dir/onnx/onnxifi_loader.c.o
+/home/jintian/anaconda3/bin/x86_64-conda-linux-gnu-ranlib libonnxifi_loader.a

@@ -1,0 +1,2 @@
+/home/jintian/anaconda3/bin/x86_64-conda-linux-gnu-ar qc libonnx_proto.a "CMakeFiles/onnx_proto.dir/onnx/onnx-ml.pb.cc.o" "CMakeFiles/onnx_proto.dir/onnx/onnx-operators-ml.pb.cc.o" "CMakeFiles/onnx_proto.dir/onnx/onnx-data.pb.cc.o"
+/home/jintian/anaconda3/bin/x86_64-conda-linux-gnu-ranlib libonnx_proto.a

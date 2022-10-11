@@ -1,0 +1,61 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/jintian/dev/codes/work/toolchains/wnn/3rd/wnnx/vendor/testonnx/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fa9d4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fa9d4.dir/build.make CMakeFiles/cmTC_fa9d4.dir/build
+gmake[1]: Entering directory '/home/jintian/dev/codes/work/toolchains/wnn/3rd/wnnx/vendor/testonnx/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fa9d4.dir/src.c.o
+/home/jintian/anaconda3/bin/x86_64-conda-linux-gnu-cc -DCMAKE_HAVE_LIBC_PTHREAD  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/jintian/anaconda3/include  -fPIE -o CMakeFiles/cmTC_fa9d4.dir/src.c.o -c /home/jintian/dev/codes/work/toolchains/wnn/3rd/wnnx/vendor/testonnx/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_fa9d4
+/home/jintian/anaconda3/lib/python3.9/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa9d4.dir/link.txt --verbose=1
+/home/jintian/anaconda3/bin/x86_64-conda-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/jintian/anaconda3/include  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/jintian/anaconda3/lib -Wl,-rpath-link,/home/jintian/anaconda3/lib -L/home/jintian/anaconda3/lib  CMakeFiles/cmTC_fa9d4.dir/src.c.o -o cmTC_fa9d4 
+/home/jintian/anaconda3/bin/../lib/gcc/x86_64-conda-linux-gnu/9.3.0/../../../../x86_64-conda-linux-gnu/bin/ld: CMakeFiles/cmTC_fa9d4.dir/src.c.o: in function `main':
+src.c:(.text.startup.main+0x24): undefined reference to `pthread_create'
+/home/jintian/anaconda3/bin/../lib/gcc/x86_64-conda-linux-gnu/9.3.0/../../../../x86_64-conda-linux-gnu/bin/ld: src.c:(.text.startup.main+0x2e): undefined reference to `pthread_detach'
+/home/jintian/anaconda3/bin/../lib/gcc/x86_64-conda-linux-gnu/9.3.0/../../../../x86_64-conda-linux-gnu/bin/ld: src.c:(.text.startup.main+0x38): undefined reference to `pthread_cancel'
+/home/jintian/anaconda3/bin/../lib/gcc/x86_64-conda-linux-gnu/9.3.0/../../../../x86_64-conda-linux-gnu/bin/ld: src.c:(.text.startup.main+0x44): undefined reference to `pthread_join'
+/home/jintian/anaconda3/bin/../lib/gcc/x86_64-conda-linux-gnu/9.3.0/../../../../x86_64-conda-linux-gnu/bin/ld: src.c:(.text.startup.main+0x50): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_fa9d4.dir/build.make:99: cmTC_fa9d4] Error 1
+gmake[1]: Leaving directory '/home/jintian/dev/codes/work/toolchains/wnn/3rd/wnnx/vendor/testonnx/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_fa9d4/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/jintian/dev/codes/work/toolchains/wnn/3rd/wnnx/vendor/testonnx/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e257b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e257b.dir/build.make CMakeFiles/cmTC_e257b.dir/build
+gmake[1]: Entering directory '/home/jintian/dev/codes/work/toolchains/wnn/3rd/wnnx/vendor/testonnx/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e257b.dir/CheckFunctionExists.c.o
+/home/jintian/anaconda3/bin/x86_64-conda-linux-gnu-cc   -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/jintian/anaconda3/include -DCHECK_FUNCTION_EXISTS=pthread_create -fPIE -o CMakeFiles/cmTC_e257b.dir/CheckFunctionExists.c.o -c /home/jintian/anaconda3/lib/python3.9/site-packages/cmake/data/share/cmake-3.24/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e257b
+/home/jintian/anaconda3/lib/python3.9/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e257b.dir/link.txt --verbose=1
+/home/jintian/anaconda3/bin/x86_64-conda-linux-gnu-cc -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/jintian/anaconda3/include -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/jintian/anaconda3/lib -Wl,-rpath-link,/home/jintian/anaconda3/lib -L/home/jintian/anaconda3/lib  CMakeFiles/cmTC_e257b.dir/CheckFunctionExists.c.o -o cmTC_e257b  -lpthreads 
+/home/jintian/anaconda3/bin/../lib/gcc/x86_64-conda-linux-gnu/9.3.0/../../../../x86_64-conda-linux-gnu/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_e257b.dir/build.make:99: cmTC_e257b] Error 1
+gmake[1]: Leaving directory '/home/jintian/dev/codes/work/toolchains/wnn/3rd/wnnx/vendor/testonnx/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_e257b/fast] Error 2
+
+
+
